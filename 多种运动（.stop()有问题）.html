@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width: 200px;height: 200px;background: red;}
+	</style>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	/*	$(function(){
+			$('div').hover(function(){
+				$(this).animate({
+					width: 300,
+					height: '300px'   //两种数值方法
+				});
+			},function(){
+				$(this).animate({
+					width: 200,
+					height: 200   //两种数值方法
+				});
+			})；
+		})； */
+
+		//stop()清除之前的运动效果，有问题（）把所有的运动效果都清除了
+		$(function(){
+			$('div').hover(function(){
+				$(this).stop().animate({
+					width: 300,
+					height: '300px'   //两种数值方法
+				});
+			},function(){
+				$(this).stop().animate({
+					width: 200,
+					height: 200   //两种数值方法
+				});
+			})；
+		})；
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
