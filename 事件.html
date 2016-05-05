@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+	//独立事件
+	/*	$(function(){
+			$('div').click(function(){
+				alert(234)
+			});  
+
+			$('div').mouseover(function(){
+				alert(234)
+			});
+		});*/
+
+	//通用事件
+	/*	$(function(){   
+		   //unbind是取消事件
+			$('div').bind('click mouseover',function(){ 
+				alert(124);
+			});  
+
+			//one()：只操作一次
+			$('div').one('mouseover',function(){
+				alert(234);
+			})
+		});  */
+
+		//pageX获取鼠标的坐标
+	/*	$(function(){
+			$('div').one('click',function(ev){
+				alert(ev.pageX);
+				return false; //既可以阻止冒泡也可以阻止默认事件
+
+				//阻止冒泡：event.stopPropagation
+				//阻止默认：event.preventDefault
+			});
+		});  */
+
+
+		$(function(){
+			$('input').toggle(function(){
+				alert(1)
+			},function(){
+				alert(2)
+			})
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" />
+	<div>adfdfdfdfgagsg</div>
+</body>
+</html>

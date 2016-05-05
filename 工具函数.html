@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+	//$.方法：工具方法，原生JS也可以用
+	/*	$(function(){
+		//循环each()
+		$('li').each(function(index, elements) {
+		//第一个参数：索引；第二个参数：所有获取的元素	
+		$(elements).html(index);
+		});
+		})  */
+		//原生js
+		window.onload=function(){
+			var aLi=document.getElementsByTagName('li');
+			$.each(aLi,function(index,elements){
+				elements.innerHTML = index;
+			});
+		};
+	</script>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

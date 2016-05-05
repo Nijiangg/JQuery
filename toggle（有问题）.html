@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+	//函数在循环
+		$(function(){
+			$('input').toggle(function(){
+				alert(1);
+			},function(){
+				alert(2);
+			},function(){
+				alert(3);
+			});
+		});  
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" />
+</body>
+</html>
