@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+	//把DIV移动到p元素的后面，直接移动该元素(操作div元素)
+	//$('div').appendTo($('p'))
+	/*	$(function(){
+			$('div').insertAfter($('p'));
+		})  */
+
+	//移动其他元素，把p元素移动到DIV元素的前面(操作p元素)
+	//$('div').append($('p'))
+    	$(function(){
+			$('p').after($('div'));
+		})
+
+	</script>
+</head>
+<body>
+	<div>div</div>
+	<p>ppp</p>
+	
+	
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-1.12.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+		//方法一	
+		//$('ul').append('<li>hello</li');
+
+		//方法2
+	/*	var oLi=$('<li>');
+		oLi.html('nihao');
+		$('ul').append(oLi);*/
+
+		//通过剪切的方式把DIV添加到P的后面
+	//	$('div').appendTo($('p'));
+
+		//clone:复制节点,通过复制的方式在p后面增加一个div
+		$('div').clone().appendTo($('p'));
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		
+	</ul>
+	<div>div</div>
+	<p>p</p>
+</body>
+</html>
