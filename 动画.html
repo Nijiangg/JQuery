@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		div{background: #98bf21;height: 100px;width: 100px;position: absolute;}
+		p{margin: 150px;}
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	/*	$(document).ready(function(){
+			$('button').click(function(){
+				$('div').animate({
+					left:'250px',
+				    opacity:'0.5',
+				    height:'150px',
+				    width:'150px'
+				});
+			});
+		});  */
+
+	//可以把属性的动画值设置为 "show"、"hide" 或 "toggle"
+	/*	$(document).ready(function(){
+		  $("button").click(function(){
+		    $("div").animate({
+		      height:'toggle'
+		    });
+		  });
+		}); */
+
+	//animate() - 使用队列功能
+		$(document).ready(function(){
+			$('button').click(function(){
+				$('div').animate({height:'300px',opacity:'0.4'},"slow");
+				$('div').animate({width:'300px',opacity:'0.8'},"slow");
+				$('div').animate({height:'100px',opacity:'0.4'},"slow");
+				$('div').animate({width:'100px',opacity:'0.8'},"slow");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>开始动画</button>
+	<div></div>
+	<p>语法：$(selector).animate({params},speed,callback);
+		必需的 params 参数定义形成动画的 CSS 属性。
+		可选的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+		可选的 callback 参数是动画完成后所执行的函数名称。
+		$("button").click(function(){
+		  	$("div").animate({left:'250px'});
+		}); 
+	</p>
+</body>
+</html>

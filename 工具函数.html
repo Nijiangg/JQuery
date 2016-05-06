@@ -13,13 +13,21 @@
 		$(elements).html(index);
 		});
 		})  */
-		//原生js
-		window.onload=function(){
+		//原生js也可以用工具方法
+	/*	window.onload=function(){
 			var aLi=document.getElementsByTagName('li');
 			$.each(aLi,function(index,elements){
 				elements.innerHTML = index;
 			});
-		};
+		};  */
+
+		window.onload=function(){
+			var oDiv=document.getElementById('div1');
+			//去掉空格  $.trim
+			alert('('+$.$.trim(oDiv.className)+')');  
+			
+		}
+
 	</script>
 </head>
 <body>
@@ -31,5 +39,6 @@
 		<li></li>
 		<li></li>
 	</ul>
+	<div id="div1" class=" box "></div>
 </body>
 </html>
