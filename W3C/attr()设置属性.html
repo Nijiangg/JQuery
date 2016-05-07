@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	//设置一个属性
+	/*	$(document).ready(function(){
+			$('button').click(function(){
+				$('#w3s').attr('href','https://github.com/Nijiangg');
+			});
+		});  */
+  
+	//设置多个属性
+		$(document).ready(function(){
+			$('button').click(function(){
+				$('#w3s').attr({
+					'href':'https://github.com/Nijiangg',
+					'title':'Github'
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<p><a href="http://www.w3school.com.cn" id="w3s">W3School.com.cn</a></p>
+	<button>改变 href 值</button>
+	<p>请把鼠标指针移动到链接上，或者点击该链接，来查看已经改变的 href 值。</p>
+</body>
+</html>
