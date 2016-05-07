@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+	.descendants *{ display: block;border: 2px solid lightgrey;color: lightgrey;padding: 5px;margin: 15px;}
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	/*children() 方法返回被选元素的所有直接子元素。
+		该方法只会向下一级对 DOM 树进行遍历。*/
+		$(document).ready(function(){
+			//返回类名为 "nobm" 的所有 <p> 元素，并且它们是 <div> 的直接子元素
+			$('div').children('p.nobm').css({
+				"color":"red",
+				"border":"2px solid red"
+			});
+	/*find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。
+    下面的例子返回属于 <div> 后代的所有 <span> 元素*/
+			$('div').find('span').css({
+				"color":"red",
+				"border":"2px solid red"
+			});
+	//$("div").find("*")返回 <div> 的所有后代
+		});
+	</script>
+</head>
+<body>
+	<div class="descendants" style="width:500px;">div (当前元素) 
+	  <p class='nobm'>p (子)
+	    <span>span (孙)</span>     
+	  </p>
+	  <p>p (child)
+	    <span>span (孙)</span>
+	  </p> 
+	</div>
+</body>
+</html>

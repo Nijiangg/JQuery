@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.ancestors *{ display: block;border: 2px solid lightgrey;color: lightgrey;padding: 5px;margin: 15px;}
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	/*parent() 方法返回被选元素的直接父元素。
+     该方法只会向上一级对 DOM 树进行遍历。*/
+		$(document).ready(function(){
+			$('span').parent().css({
+				"color":"red",
+				"border":"2px solid red"
+			});
+	/*parents()                                                           方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (<html>)。*/
+			$('span').parents().css({
+				 "color":"red",
+				 "border":"2px solid red"
+			});
+	//parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素,下例返回介于 <span> 与 <div> 元素之间的所有祖先元素
+			$("span").parentsUntil("div").css({
+				"color":"red",
+				"border":"2px solid red"
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="ancestors">
+	  <div style="width:500px;">div (曾祖父)
+	    <ul>ul (祖父)  
+	      <li>li (直接父)
+	        <span>span</span>
+	      </li>
+	    </ul>   
+	  </div>
+
+	  <div style="width:500px;">div (祖父)   
+	    <p>p (直接父)
+	        <span>span</span>
+	      </p> 
+	  </div>
+	</div>
+</body>
+<!-- 最外围的红色边框，在 body 元素之前，是 html 元素（也是祖先）。 -->
+</html>
