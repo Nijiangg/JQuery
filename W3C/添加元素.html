@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+	//append() 方法在被选元素的结尾插入内容。
+		$(document).ready(function(){
+			$('#btn1').click(function(){
+				$('.p1').append('<b>Appended texr</b>');
+			});
+	//prepend() 方法在被选元素的开头插入内容。
+			$('#btn2').click(function(){
+				$('ol').prepend("<li>Appended</li>");
+			});
+	//after() 方法在被选元素之后插入内容。
+			$('#btn3').click(function(){
+				$('img').before("<b>Before</b>");
+			});
+	//before() 方法在被选元素之前插入内容。
+			$('#btn4').click(function(){
+				$('img').after("<i>After</i>");
+			});
+		});
+	</script>
+</head>
+<body>
+	<p class='p1'>This is a paragraph.</p>
+	<p class='p1'>This is another paragraph.</p>
+	<ol>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ol>
+	<button id="btn1">追加文本</button>
+	<button id="btn2">追加列表项</button>
+	<img src="http://www.w3school.com.cn/i/eg_w3school.gif" alt="W3School Logo" />
+	<br><br>
+	<button id="btn3">在图片前面添加文本</button>
+	<button id="btn4">在图片后面添加文本</button>
+	<p>	append() - 在被选元素的结尾插入内容
+		prepend() - 在被选元素的开头插入内容
+		after() - 在被选元素之后插入内容
+		before() - 在被选元素之前插入内容
+	</p>
+</body>
+</html>
