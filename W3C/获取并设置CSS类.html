@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		.important{font-weight: bold;font-size: xx-large;}
+		.blue{color: blue;}
+	</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+	//可以在 addClass() 方法中规定多个类向不同的元素添加 class 属性
+			$('#btn1').click(function(){
+				$('h1,h2,p').addClass('blue');
+				$('div').addClass('important blue');
+			});
+	//removeClass() 方法在不同的元素中删除指定的 class 属性
+			$('#btn2').click(function(){
+				$('h1,h2,p').removeClass('blue');
+			});
+	//toggleClass() 方法对被选元素进行添加/删除类的切换操作
+			$('#btn3').click(function(){
+				$('h1,h2,p').toggleClass('blue');
+			});
+		});
+	</script>
+</head>
+<body>
+	<h1>标题 1</h1>
+	<h2>标题 2</h2>
+	<p> addClass() - 向被选元素添加一个或多个类
+		removeClass() - 从被选元素删除一个或多个类
+		toggleClass() - 对被选元素进行添加/删除类的切换操作
+		css() - 设置或返回样式属性
+	</p>
+	<p class="blue">这是一个段落。</p>
+	<div>这是非常重要的文本！</div>
+	<br>
+	<button id='btn1'>向元素添加类</button>
+	<button id='btn2'>从元素上删除类</button>
+	<button id='btn3'>切换 CSS 类</button>
+</body>
+</html>
