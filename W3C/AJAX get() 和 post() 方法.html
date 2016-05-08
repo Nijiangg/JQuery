@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		  $("#btn1").click(function(){
+		    $.get("/example/jquery/demo_test.asp",function(data,status){
+		      alert("数据：" + data + "\n状态：" + status);
+		    });
+		  });
+
+		  $("#btn2").click(function(){
+		    $.post("/example/jquery/demo_test_post.asp",
+		    {
+		      name:"Donald Duck",
+		      city:"Duckburg"
+		    },
+		    function(data,status){
+		      alert("数据：" + data + "\n状态：" + status);
+		    });
+  		  });
+		});
+	</script>
+</head>
+<body>
+	<p>$.get(URL,callback);
+		必需的 URL 参数规定您希望请求的 URL。
+		可选的 callback 参数是请求成功后所执行的函数名。</p>
+	<button id="btn1">向页面发送 HTTP GET 请求，然后获得返回的结果</button>
+	<p>$.post(URL,data,callback);
+		必需的 URL 参数规定您希望请求的 URL。
+		可选的 data 参数规定连同请求发送的数据。
+		可选的 callback 参数是请求成功后所执行的函数名。</p>
+	<button id="btn2">向页面发送 HTTP POST 请求，并获得返回的结果</button>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+		//load() 方法完成后显示一个提示框。如果 load() 方法已成功，则显示“外部内容加载成功！”，而如果失败，则显示错误消息：
+		$(document).ready(function(){
+		  $("button").click(function(){
+		    $("#div1").load("/example/jquery/demo_test.txt",function(responseTxt,statusTxt,xhr){
+		      if(statusTxt=="success")
+		        alert("外部内容加载成功！");
+		      if(statusTxt=="error")
+		        alert("Error: "+xhr.status+": "+xhr.statusText);
+		    });
+		  });
+		});
+	</script>
+</head>
+<body>
+	<div id="div1"><h2>使用 jQuery AJAX 来改变文本</h2></div>
+	<button>获得外部内容</button>
+	<p>语法：
+		$(selector).load(URL,data,callback);
+		必需的 URL 参数规定您希望加载的 URL。
+		可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。
+		可选的 callback 参数是 load() 方法完成后所执行的函数名称。</p>
+	<p>下面的例子把 "demo_test.txt" 文件中 id="p1" 			
+		的元素的内容，加载到指定的 <div> 元素中：
+		实例
+		$("#div1").load("demo_test.txt #p1");</p>
+	<p>可选的 callback 参数规定当 load() 	
+		方法完成后所要允许的回调函数。回调函数可以设置不同的参数：
+		responseTxt - 包含调用成功时的结果内容
+		statusTXT - 包含调用的状态
+		xhr - 包含 XMLHttpRequest 对象</p>
+</body>
+</html>
