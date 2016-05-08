@@ -5,10 +5,25 @@
 	<title>Document</title>
 	<script type="text/javascript" src="jquery-2.2.3.js"></script>
 	<script type="text/javascript">
-		
+	//noConflict() 可返回对 jQuery 的引用，您可以把它存入变量
+		var jq=$.noConflict();
+		jq(document).ready(function(){
+		  jq("button").click(function(){
+		    jq("p").text("jQuery 仍在运行！");
+		  });
+		});
+
+	//也可以把 $ 符号作为变量传递给ready方法。这样就可以在函数内使用 $ 符号了,而在函数外，依旧不得不使用 "jQuery"
+		$.noConflict();
+		jQuery(document).ready(function($){
+		  $("button").click(function(){
+		    $("p").text("jQuery 仍在运行！");
+		  });
+		});
 	</script>
 </head>
 <body>
-	
+	<p>这是一个段落。</p>
+	<button>测试 jQuery</button>
 </body>
 </html>
