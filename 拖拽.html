@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style type="text/css">
+		div {width: 200px;height: 200px;background-color: red;border: 1px solid black;position: absolute;}
+		
+	</style>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<script type="text/javascript" src="jquery-2.2.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var disX=0;
+			var disY=0;
+			$('div').mousedown(function(ev){
+				disX=ev.pageX-$(this).offset().left;
+				disY=ev.pageY-$(this).offset().top;
+				$(document).mousemove(function(ev){
+					$('div').css('left',ev.pageX-disX);
+					$('div').css('top',ev.pageY-disY);
+				});
+				$(document).mouseup(function(){
+					$(document).off();
+				});
+				return false;
+			})
+		})
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
